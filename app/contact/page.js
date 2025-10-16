@@ -1,4 +1,6 @@
 'use client';
+import Link from 'next/link'
+
 
 import { useState } from 'react';
 
@@ -38,12 +40,12 @@ export default function ContactPage() {
       <header className="bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <h1 className="text-2xl font-bold text-white">ShortLink</h1>
-          <a
+          <Link
             href="/"
             className="text-white/90 hover:text-white font-medium px-4 py-2 rounded-lg hover:bg-white/10"
           >
             ← Back to Home
-          </a>
+          </Link>
         </div>
       </header>
 

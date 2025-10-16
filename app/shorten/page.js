@@ -7,7 +7,7 @@ const Shorten = () => {
     const [url, seturl] = useState("")
     const [shorturl, setshorturl] = useState("")
     const [generated, setgenerated] = useState(false)
-    const [popup, setPopup] = useState(false) // ✅ added popup state
+    const [popup, setPopup] = useState(false)
 
     const generate = () => {
       const myHeaders = new Headers();
@@ -31,8 +31,7 @@ const Shorten = () => {
           setgenerated(`${process.env.NEXT_PUBLIC_BASE_URL}/${shorturl}`)
           seturl("")
           setshorturl("")
-          console.log(result)
-          alert("result.message")
+       
       })
         .catch((error) => console.error(error));
     }
@@ -40,7 +39,7 @@ const Shorten = () => {
     const handleCopy = () => {
       navigator.clipboard.writeText(generated)
       setPopup(true)
-      setTimeout(() => setPopup(false), 2000) // auto-hide after 2s
+      setTimeout(() => setPopup(false), 2000)
     }
     
   return (
@@ -131,14 +130,13 @@ const Shorten = () => {
                         </div>
                         
                         <p className="text-green-700 text-sm mt-4 text-center">
-                            🎉 Share your short link anywhere! It's ready to use.
+                            🎉 Share your short link anywhere! It&apos;s ready to use.
                         </p>
                     </div>
                 </div>
             )}
         </div>
 
-        {/* ✅ Popup */}
         {popup && (
           <div className="fixed bottom-6 right-6 bg-blue-600 text-white px-4 py-3 rounded-lg shadow-lg text-sm md:text-base">
             ✅ Link copied to clipboard!
